@@ -1,4 +1,4 @@
-export default function(express, bodyParser, fs, crypto, http) {
+export function(express, bodyParser, fs, crypto, http) {
     const app = express();
     const CORS = {
         'Access-Control-Allow-Origin': '*',

@@ -32,7 +32,7 @@ export default function(express, bodyParser, fs, crypto, http) {
         .all('/req/', (req, res) => {
             res.set(CORS);
             if (req.method === "GET" || req.method === "POST") {
-                const url = req.method === "GET" ? req.query.addr : req.body.addr;
+                const url = req.method === "GET" ? req.query.addr : req.body;
                 if (url) {
                     http.get(url, (response) => {
                         let rawData = '';

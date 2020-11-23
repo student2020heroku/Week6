@@ -40,7 +40,7 @@ export default function(express, bodyParser, fs, crypto, http) {
                             rawData += chunk;
                         });
                         response.on('end', () => {
-                            res.send(rawData + '/');
+                            res.send(rawData);
                         });
                     });
                 } else {

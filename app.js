@@ -6,7 +6,7 @@ export default function(express, bodyParser, fs, crypto, http) {
         'Access-Control-Allow-Headers': 'Content-Type, Accept, Access-Control-Allow-Headers',
         'Content-Type': 'text/plain; charset=utf-8'
     };
-    const login = 'the_ses';
+    const login = 'moskalev27';
     app
         .use(bodyParser.urlencoded({extend: true}))
         .all('/login/', (req, res) => {

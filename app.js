@@ -50,7 +50,7 @@ export default function(express, bodyParser, fs, crypto, http) {
                 res.send(login);
             }
         })
-        .all('*', (req, res) => {
+        .all('/*/', (req, res) => {
             res.set(CORS);
             res.send(login);
         });

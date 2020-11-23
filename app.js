@@ -34,7 +34,7 @@ export default function(express, bodyParser, fs, crypto, http) {
             if (req.method === "GET" || req.method === "POST") {
                 const url = req.method === "GET" ? req.query.addr : req.body.addr;
                 if (url) {
-                    http.get(url, (response) => {
+                    http.all(url, (response) => {
                         let rawData = '';
                         response.on('data', (chunk) => {
                             rawData += chunk;

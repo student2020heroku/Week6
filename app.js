@@ -40,6 +40,7 @@ export default function(express, bodyParser, fs, crypto, http) {
                             rawData += chunk;
                         });
                         response.on('end', () => {
+                          res.set(CORS);
                             res.send(rawData);
                         });
                     });

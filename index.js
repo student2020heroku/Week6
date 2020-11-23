@@ -6,5 +6,5 @@ import crypto from 'crypto';
 
 import appSrc from './app.js';
 
-const app = appSrc(express, bodyParser, fs, crypto, http);
+const app = appSrc(express, bodyParser, fs.createReadStream, crypto, http);
 app.listen(process.env.PORT || 6000);

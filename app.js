@@ -1,4 +1,4 @@
-export default function(express, bodyParser, fs, crypto, http) {
+export default function(express, bodyParser, createReadStream, crypto, http) {
     const app = express();
     const CORS = {
         'Access-Control-Allow-Origin': '*',
@@ -17,9 +17,7 @@ export default function(express, bodyParser, fs, crypto, http) {
         .all('/code/', (req, res) => {
             res.set(CORS);
             const path = import.meta.url.substring(7);
-            fs.readFile(path, 'utf8', ((err, data) =>
-                    res.send(data)
-            ));
+            createReadStream(path).pipe(res);
         })
         .all('/sha1/:input/', (req, res) => {
             res.set(CORS);
